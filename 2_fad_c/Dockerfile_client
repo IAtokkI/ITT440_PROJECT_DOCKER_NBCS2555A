@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y gcc
+WORKDIR /app
+COPY client.c .
+RUN gcc client.c -o client_exe
+CMD ["./client_exe"]
